@@ -211,6 +211,8 @@ html,body{height:100%;overflow:hidden;background:#000}
 .ctrl button{background:transparent;border:0;color:#E6D3B3;font-size:20px;width:40px;height:34px;cursor:pointer}
 .ctrl button:hover{background:#222}
 .ctrl .n{min-width:64px;text-align:center;letter-spacing:.08em}
+.gire{display:none}
+@media (orientation:portrait) and (max-width:700px){.gire{display:block;position:fixed;z-index:9;left:16px;right:16px;top:16px;text-align:center;font:500 13px Rubik,sans-serif;color:#CFCFCF}}
 .prog{position:fixed;z-index:9;left:0;top:0;height:3px;background:#E6D3B3;transition:width .3s}
 @media print{html,body{overflow:visible;height:auto}.deck{position:static}.slide{position:relative!important;left:0;top:0;transform:none!important;display:block}.ctrl,.prog{display:none}}
 </style>
@@ -562,6 +564,7 @@ html,body{height:100%;overflow:hidden;background:#000}
 
 </div>
 <div class="prog" id="prog"></div>
+<div class="gire">Gire o celular para ver maior</div>
 <div class="ctrl"><button id="ant" aria-label="Anterior">‹</button><span class="n" id="num"></span><button id="prox" aria-label="Próximo">›</button></div>
 <script>
 (function(){
@@ -574,7 +577,7 @@ html,body{height:100%;overflow:hidden;background:#000}
   addEventListener('keydown',e=>{ if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(i+1)} if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(i-1)} });
   let x0=null; addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
   addEventListener('touchend',e=>{ if(x0===null)return; const d=e.changedTouches[0].clientX-x0; if(Math.abs(d)>50) go(i+(d<0?1:-1)); x0=null; });
-  addEventListener('resize',fit); fit(); go((parseInt(location.hash.slice(1))||1)-1);
+  addEventListener('hashchange',()=>{const n=parseInt(location.hash.slice(1));if(n&&n-1!==i)go(n-1)}); addEventListener('resize',fit); fit(); go((parseInt(location.hash.slice(1))||1)-1);
 })();
 </script>
 </body>
