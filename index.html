@@ -4,482 +4,619 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Resgalla vendendo online · proposta da Orion</title>
-<meta name="description" content="Proposta da Orion para a Resgalla, fábrica de bolsas de couro legítimo em Oliveira/MG: loja online, Google e marketplace.">
-<link rel="icon" href="img/logo.png">
-<link rel="preconnect" href="https://api.fontshare.com">
-<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=sentient@300,400,500&display=swap" rel="stylesheet">
+<title>Resgalla · Diagnóstico de oportunidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
 <style>
+/* RESGALLA NO MERCADO LIVRE · diagnóstico de oportunidade. Identidade: preto + creme do couro (logo preto e branco), Rubik. Base: modelo da Cifel v3. */
+@page{size:338.6667mm 190.5mm;margin:0}
 :root{
-  --bg:#0F0D0B; --surface:#1B1714; --field:#DEDCD8; --ink:#ECECEA; --ink-dark:#15110D; --muted:#BDB2A2; --muted-dark:#5C5247; --accent:#E6D3B3;
-  --m:clamp(16px,2.4vw,32px);
-  --step-small:clamp(0.8125rem,0.79rem + 0.1vw,0.875rem);
-  --step-body:clamp(1.0625rem,1.02rem + 0.25vw,1.25rem);
-  --step-lead:clamp(1.25rem,1.1rem + 0.7vw,1.625rem);
-  --step-head:clamp(2rem,1.3rem + 3.2vw,4rem);
-  --step-display:clamp(3.25rem,1.2rem + 6vw,6.25rem);
-  --ease:cubic-bezier(.2,.7,.2,1);
+  --ink:#000000;
+  --yellow:#E6D3B3;
+  --white:#FFFFFF;
+  --paper:#F2F2F2;
+  --panel:#151515;
+  --panel-2:#1C1C1C;
+  --tint:#1A1611;
+  --dim:#A3A3A3;
+  --faint:#5E5E5E;
+  --line:#2A2A2A;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font-family:Sentient,Georgia,serif;font-size:var(--step-body);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
-a{color:inherit}
-::selection{background:var(--accent);color:var(--ink-dark)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-h1,h2,h3{font-weight:300;letter-spacing:-0.015em;line-height:1}
-.wrap{padding-left:var(--m);padding-right:var(--m)}
-.grid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(12px,1.6vw,24px)}
-.btn{display:inline-block;background:var(--accent);color:var(--ink-dark);text-decoration:none;font:500 var(--step-body)/1 Sentient,serif;padding:18px 28px;border:0;cursor:pointer;transition:transform .25s var(--ease),background .25s}
-.btn:hover{background:#F3E6CC;transform:translateY(-2px)}
-.btn:active{transform:translateY(0) scale(.98)}
-.btn.dark{background:var(--ink-dark);color:var(--ink)}
-.btn.dark:hover{background:#2A231C}
-.link{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;transition:opacity .2s}
-.link:hover{opacity:.7}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{background:#1a1a1a;font-family:Rubik,"Segoe UI",Arial,sans-serif;color:var(--white);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.deck{display:flex;flex-direction:column;align-items:center;gap:26px;padding:26px 0}
+@media print{body{background:var(--ink)}.deck{display:block;padding:0}}
 
-/* entradas */
-.rv{opacity:1;transform:none}
-.js .rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.js .rv.in{opacity:1;transform:none}
+/* ── FOLHA ───────────────────────────────────────────────────── */
+.slide{position:relative;flex:none;width:1280px;height:720px;background:var(--ink);overflow:hidden;
+  break-after:page;page-break-after:always}
+.slide:last-child{break-after:auto;page-break-after:auto}
+.pad{position:absolute;left:72px;right:72px;top:56px;bottom:52px}
 
-/* ── 1. abertura ── */
-.hero{position:relative;min-height:100svh;display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(12px,1.6vw,24px);padding-left:var(--m);overflow:hidden}
-.hero-txt{grid-column:1/7;display:flex;flex-direction:column;justify-content:space-between;padding:28px 0 56px;z-index:2}
-.top{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:var(--step-lead);font-weight:400}
-.brand img{width:44px;height:44px}
-.nav{display:flex;gap:28px;font-size:var(--step-small)}
-.nav a{text-decoration:none;transition:opacity .2s}
-.nav a:hover{opacity:.65}
-.hero h1{font-size:var(--step-display);margin-top:auto}
-.hero .lead{margin-top:36px;font-size:var(--step-lead);line-height:1.4;max-width:30ch;color:var(--ink)}
-.hero .acts{margin-top:40px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
-.hero-ph{grid-column:7/13;position:relative;min-height:100svh;overflow:hidden;background:var(--surface)}
-.hero-ph img{position:absolute;left:-8%;top:-6%;width:120%;height:112%;object-fit:cover;object-position:50% 40%}
-.hero-act{position:absolute;top:24px;right:var(--m);z-index:3}
-.js .shutter{clip-path:inset(0 0 100% 0)}
-.js .shutter img{transform:scale(1.12)}
-.shutter.open{clip-path:inset(0 0 0 0);transition:clip-path 1.1s var(--ease)}
-.shutter.open img{transform:scale(1);transition:transform 1.4s var(--ease)}
+/* ── TIPOGRAFIA ──────────────────────────────────────────────── */
+.d{font-weight:900;text-transform:uppercase;letter-spacing:-.015em;line-height:.95}
+.y{color:var(--yellow)}
+.kicker{color:var(--yellow);font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+h1{font-size:54px;margin-top:12px}
+h1.md{font-size:48px}
+.rule{height:1px;background:var(--line);margin-top:22px}
+.pageno{position:absolute;right:72px;top:64px;font-size:10px;letter-spacing:.32em;color:#4A4A4A}
+.foot{position:absolute;left:72px;right:72px;bottom:28px;display:flex;justify-content:space-between;
+  font-size:8.5px;letter-spacing:.22em;color:#484848;text-transform:uppercase}
+.src{font-size:9.5px;letter-spacing:.06em;color:#6E6E6E;line-height:1.5}
+.bottom{position:absolute;left:0;right:0;bottom:60px}
 
-/* ── 2. números sobre a foto ── */
-.stats{margin-top:clamp(120px,14vw,200px)}
-.fig{position:relative;height:88svh;overflow:hidden}
-.fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;transform:scale(1.06);transition:transform 2.4s var(--ease)}
-.fig.in img{transform:scale(1)}
-.fig::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(to top,rgba(10,8,6,.82),rgba(10,8,6,0))} /* taste-skill-ignore: scrim neutro sob texto na foto */
-.fig h2{position:absolute;top:24px;left:var(--m);z-index:2;font-size:var(--step-lead);font-weight:400;background:rgba(15,13,11,.72);padding:12px 16px}
-.fig .big{position:absolute;left:var(--m);bottom:6px;z-index:2;font-size:clamp(120px,17vw,280px);line-height:.8;font-weight:300;letter-spacing:-0.03em}
-.fig .big small{font-size:var(--step-head);letter-spacing:0}
-.fig .say{position:absolute;right:var(--m);bottom:28px;z-index:2;max-width:26ch;text-align:right;font-size:var(--step-body);line-height:1.45}
-.sub{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-.sub div{display:flex;align-items:baseline;gap:16px}
-.sub b{font-size:var(--step-head);font-weight:300;letter-spacing:-0.02em;white-space:nowrap}
-.sub span{font-size:var(--step-body);line-height:1.35}
+/* ── NÚMEROS ─────────────────────────────────────────────────── */
+.num{font-weight:900;letter-spacing:-.03em;line-height:1;font-size:58px}
+.num .cur{font-size:.5em;margin-right:4px}
+.num .suf{font-size:.42em;letter-spacing:0}
+.num .pre{font-size:.5em;margin-right:2px;vertical-align:.35em}
+.num.lg{font-size:84px}
+.nlab{margin-top:12px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);line-height:1.55}
+.nsub{margin-top:5px;font-size:10px;color:var(--faint);line-height:1.45}
+.cols{display:grid}
+.cols>div{padding-left:30px;border-left:1px solid var(--line)}
+.cols>div:first-child{padding-left:0;border-left:0}
+.c4{grid-template-columns:repeat(4,1fr)}
+.c3{grid-template-columns:repeat(3,1fr)}
 
-/* ── 3. raio X em lista ── */
-.list{margin-top:clamp(120px,14vw,200px)}
-.cat{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-top:96px;margin-bottom:40px}
-.cat:first-child{margin-top:0}
-.cat h2,.cat h3{font-size:var(--step-head)}
-.cat span{font-size:var(--step-body);color:var(--muted)}
-.items{display:grid;grid-template-columns:1fr 1fr;column-gap:64px;row-gap:36px}
-.it{display:grid;grid-template-columns:72px 1fr;gap:20px;align-items:start}
-.it img{width:72px;height:72px;object-fit:cover;object-position:50% 30%}
-.it .nm{display:flex;justify-content:space-between;gap:12px;font-weight:500;font-size:var(--step-body);line-height:1.3}
-.it .nm em{font-style:normal;white-space:nowrap}
-.it p{margin-top:6px;font-size:var(--step-body);line-height:1.5;color:var(--muted);max-width:44ch}
-.it .flag{color:var(--accent)}
-.note{margin-top:64px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px}
-.note p{grid-column:1/8;font-size:var(--step-lead);line-height:1.4}
-.note p b{font-weight:500}
-.note .side{grid-column:9/13;font-size:var(--step-body);line-height:1.55;color:var(--muted)}
+/* ── CARDS ───────────────────────────────────────────────────── */
+.card{background:var(--panel);border-top:4px solid var(--yellow);padding:22px 24px 24px}
+.card.muted{border-top-color:#333}
+.card.light{border-top-color:var(--white)}
+.card.on-y{background:var(--yellow);border-top-color:var(--ink)}
+.card.on-y *{color:var(--ink)!important}
+.card .idx{font-weight:900;font-size:26px;color:var(--yellow);letter-spacing:-.02em}
+.card h3{margin-top:8px;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.card p{margin-top:9px;font-size:12.5px;line-height:1.55;color:#B4B4B4}
+.card ul{margin-top:12px;list-style:none}
+.card li{position:relative;padding-left:18px;font-size:13.5px;line-height:1.5;color:#D6D6D6;margin-top:9px}
+.card li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;background:var(--yellow)}
+.card.muted li::before{background:#555}
+.card.light li::before{background:var(--white)}
+.card.on-y li::before{background:var(--ink)}
+.card li b{color:var(--white);font-weight:600}
+.tight li{font-size:13px;margin-top:6px}
 
-/* ── 4. faixa de buscas ── */
-.band{margin-top:clamp(120px,14vw,200px);background:var(--field);color:var(--ink-dark);height:34vh;min-height:220px;display:flex;align-items:center;overflow:hidden}
-.track{display:flex;white-space:nowrap;animation:corre 46s linear infinite}
-.track span{font-size:var(--step-display);font-weight:300;letter-spacing:-0.02em;padding-right:.5em;display:flex;align-items:center;gap:.5em}
-.track span::after{content:"";width:.3em;height:.3em;border-radius:50%;background:var(--ink-dark)}
-@keyframes corre{to{transform:translateX(-50%)}}
-.band-txt{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;margin-top:40px}
-.band-txt h2{grid-column:1/7;font-size:var(--step-head)}
-.band-txt p{grid-column:7/13;font-size:var(--step-body)}
+/* ── CITAÇÃO ─────────────────────────────────────────────────── */
+.quote{border-left:4px solid var(--yellow);padding-left:22px}
+.quote p{font-size:18px;line-height:1.5;color:#D9D9D9;max-width:980px}
+.quote p b{color:var(--white);font-weight:600}
 
-/* ── 5. dois objetos, dois campos ── */
-.show{margin-top:clamp(120px,14vw,200px);display:grid;grid-template-columns:1fr 1fr}
-.pan{position:relative;height:92svh;min-height:620px;overflow:hidden}
-.pan img{position:absolute;left:50%;bottom:150px;width:120%;height:auto;max-width:none;transform:translateX(-50%)}
-.pan.a{background:var(--surface)}
-.pan.b{background:var(--field);color:var(--ink-dark)}
-.pan h2{position:absolute;top:28px;left:28px;z-index:2;font-size:var(--step-lead);max-width:12ch;background:var(--surface);padding:12px 16px 14px}
-.pan .row{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;padding:24px 28px 28px;background:inherit}
-.pan .row h3{font-size:var(--step-lead);font-weight:500;letter-spacing:0}
-.pan .row p{font-size:var(--step-body);line-height:1.45;max-width:36ch;margin-top:6px}
-.pan .row .acts{display:flex;gap:8px;flex-shrink:0}
-.pan .sm{display:inline-block;text-decoration:none;font-size:var(--step-body);padding:12px 16px;transition:transform .2s var(--ease),opacity .2s}
-.pan .sm:hover{transform:translateY(-2px)}
-.pan.a .sm.f{background:var(--ink);color:var(--ink-dark)} .pan.a .sm.o{background:#2B2520;color:var(--ink)}
-.pan.b .sm.f{background:var(--ink-dark);color:var(--ink)} .pan.b .sm.o{background:#D8CCB8;color:var(--ink-dark)}
+/* ── ACENTOS: faixa de sinalização (fita zebrada da ferramentaria) ── */
+.hazard{background:repeating-linear-gradient(-45deg,var(--yellow) 0 22px,var(--ink) 22px 44px)}
+.band{position:absolute;background:var(--tint)}
 
-/* ── 6. a prévia ── */
-.prev{margin-top:clamp(120px,14vw,200px)}
-.prev-h{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;align-items:end}
-.prev-h h2{grid-column:1/8;font-size:var(--step-head)}
-.prev-h div{grid-column:8/13}
-.prev-h p{font-size:var(--step-body)}
-.prev-h .link{display:inline-block;margin-top:16px}
-.frame{margin-top:48px;height:84svh;background:var(--field)}
-.frame iframe{width:100%;height:100%;border:0;display:block}
-.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-.facts h3{font-size:var(--step-lead);font-weight:400}
-.facts p{margin-top:8px;font-size:var(--step-body);color:var(--muted)}
+/* ── TABELA ──────────────────────────────────────────────────── */
+table.t{width:100%;border-collapse:collapse;font-size:12.5px}
+.t th{text-align:left;font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);
+  padding:0 12px 10px 0;border-bottom:2px solid var(--yellow)}
+.t td{padding:11px 12px 11px 0;border-bottom:1px solid var(--line);color:#CFCFCF;vertical-align:top;line-height:1.35}
+.t td.line{font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:10px;color:var(--dim);padding-top:13px}
+.t td.cifel{color:var(--white);font-weight:500}
+.t td.sold{font-weight:900;font-size:19px;color:var(--yellow);white-space:nowrap;letter-spacing:-.02em}
+.t td.price{white-space:nowrap;font-weight:600;color:var(--white)}
+.t th.r,.t td.r{text-align:right;padding-right:0}
+.t a{border-bottom:1px dotted #666}
+.t a .mlb{display:block;margin-top:3px;font-size:9.5px;color:#777;letter-spacing:.04em;border:0}
+.eq{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;
+  border:1px solid #444;color:#BDBDBD;white-space:nowrap}
+.eq.same{border-color:var(--yellow);color:var(--yellow)}
 
-/* ── 7. propostas, o recibo ── */
-.pricing{margin-top:clamp(120px,14vw,200px);background:var(--surface);overflow:hidden;position:relative}
-.pr{display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding-bottom:120px}
-.pr-l{grid-column:1/7;padding-top:96px}
-.pr-l h2{font-size:var(--step-head)}
-.pr-l > p{margin-top:28px;max-width:46ch}
-.opts{margin-top:40px;display:grid;gap:12px}
-.opt{display:grid;grid-template-columns:28px 1fr auto;gap:16px;align-items:start;background:#24201B;padding:20px 22px;cursor:pointer;transition:background .2s}
-.opt:hover{background:#2D2721}
-.opt input{width:22px;height:22px;margin-top:4px;accent-color:#E6D3B3;cursor:pointer}
-.opt b{display:block;font-weight:500;font-size:var(--step-body);line-height:1.3}
-.opt span{display:block;margin-top:4px;font-size:var(--step-body);color:var(--muted);line-height:1.45}
-.opt em{font-style:normal;font-size:var(--step-body);white-space:nowrap;font-variant-numeric:tabular-nums}
-.sim{margin-top:28px;background:#24201B;padding:20px 22px}
-.sim label{display:flex;justify-content:space-between;gap:12px;font-size:var(--step-body)}
-.sim output{font-variant-numeric:tabular-nums;font-weight:500}
-.sim input{width:100%;margin-top:14px;accent-color:#E6D3B3}
-.sim p{margin-top:8px;font-size:var(--step-body);color:var(--muted)}
-.pr-l .btn{margin-top:36px}
-.slip{grid-column:8/12;align-self:start;background:var(--field);color:var(--ink-dark);padding:72px 28px 56px;clip-path:polygon(0 0,100% 0,100% calc(100% - 14px),95% 100%,90% calc(100% - 14px),85% 100%,80% calc(100% - 14px),75% 100%,70% calc(100% - 14px),65% 100%,60% calc(100% - 14px),55% 100%,50% calc(100% - 14px),45% 100%,40% calc(100% - 14px),35% 100%,30% calc(100% - 14px),25% 100%,20% calc(100% - 14px),15% 100%,10% calc(100% - 14px),5% 100%,0 calc(100% - 14px))}
-.slip h3{text-align:center;font-size:var(--step-lead);font-weight:500;letter-spacing:0}
-.slip .dt{text-align:center;font-size:var(--step-small);color:var(--muted-dark);margin-top:4px}
-.rows{margin-top:28px;display:grid;gap:14px;min-height:96px}
-.rows div{display:flex;justify-content:space-between;gap:16px;font-size:var(--step-body);line-height:1.35}
-.rows div span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
-.rows .vazio{color:var(--muted-dark)}
-.bar{height:4px;background:var(--ink-dark);margin:24px 0 18px}
-.tot{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
-.tot span{font-size:var(--step-body)}
-.tot b{white-space:nowrap;font-size:var(--step-head);font-weight:300;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
-.mes{margin-top:12px;display:flex;justify-content:space-between;gap:12px;font-size:var(--step-body)}
-.mes b{font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
-.slip .fine{margin-top:24px;font-size:var(--step-small);color:var(--muted-dark);line-height:1.45}
+/* ── DEMANDA × CONCORRÊNCIA × MARGEM ─────────────────────────── */
+.dcm{display:grid;grid-template-columns:200px repeat(3,1fr);margin-top:24px}
+.dcm>div{border-top:1px solid var(--line);padding:13px 18px 13px 0}
+.dcm .hd{border-top:0;padding-bottom:10px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.dcm .hd span{display:block;margin-top:4px;font-size:10px;font-weight:500;letter-spacing:.04em;text-transform:none;color:var(--faint)}
+.dcm .rl{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.dcm .rl.dem{color:var(--yellow)}
+.dcm .rl span{display:block;margin-top:5px;font-size:10px;font-weight:400;letter-spacing:.02em;text-transform:none;color:var(--faint);line-height:1.4}
+.dcm .v{font-weight:900;font-size:34px;letter-spacing:-.03em;line-height:1}
+.dcm .v.pend{font-size:20px;font-weight:700;color:#6A6A6A;letter-spacing:.02em;text-transform:uppercase;padding-top:8px}
+.dcm .s{margin-top:5px;font-size:11px;color:#9A9A9A;line-height:1.4}
 
-/* ── 8. como trabalhamos ── */
-.how{margin-top:clamp(120px,14vw,200px)}
-.tiles{display:grid;grid-template-columns:repeat(12,1fr);column-gap:10px;align-items:end}
-.tiles h2{grid-column:1/8;grid-row:1;align-self:start;font-size:var(--step-head);max-width:12ch}
-.tile{grid-row:2;overflow:hidden;position:relative}
-.tile .box{width:100%;height:100%}
-.tile img{width:100%;height:100%;object-fit:cover}
-.t1{grid-column:1/4;height:30vh;background:#3A2E25}
-.t2{grid-column:4/8;height:44vh;background:var(--surface)}
-.t3{grid-column:8/13;height:60vh;grid-row:1/3;background:var(--field)}
-.capts{display:grid;grid-template-columns:repeat(12,1fr);column-gap:10px;margin-top:24px}
-.capts div:nth-child(1){grid-column:1/4}.capts div:nth-child(2){grid-column:4/8}.capts div:nth-child(3){grid-column:8/13}
-.capts h3{font-size:var(--step-lead);font-weight:500;letter-spacing:0}
-.capts p{margin-top:8px;font-size:var(--step-body);line-height:1.5;max-width:40ch}
+/* ── ECONOMIA DO PRODUTO (cascata ilustrativa, sem valores) ──── */
+.wf{margin-top:30px}
+.wf .row{display:grid;grid-template-columns:230px 1fr;align-items:center;height:44px}
+.wf .lab{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#CFCFCF}
+.wf .lab .op{display:inline-block;width:18px;color:var(--yellow)}
+.wf .trk{position:relative;height:26px;border-left:1px dashed #333}
+.wf .bar{position:absolute;top:0;height:26px}
+.wf .bar.y{background:var(--yellow)}
+.wf .bar.g{background:repeating-linear-gradient(-45deg,#3A3A3A 0 6px,#2A2A2A 6px 12px)}
+.wf .row.total{border-top:2px solid var(--yellow);margin-top:6px;padding-top:8px;height:54px}
+.wf .row.total .lab{color:var(--yellow)}
 
-/* ── 9. a peça volta ── */
-.cta{margin-top:clamp(120px,14vw,200px);position:relative;height:90svh;min-height:600px;overflow:hidden;background:var(--field);color:var(--ink-dark);display:grid;grid-template-columns:repeat(12,1fr);column-gap:24px;padding-right:var(--m)}
-.cta-ph{grid-column:1/8;position:relative;overflow:hidden}
-.cta-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 42%;transform:scale(1.15);transform-origin:40% 45%}
-.cta-txt{grid-column:8/13;align-self:center;padding-left:24px}
-.cta-txt h2{font-size:var(--step-head)}
-.cta-txt p{margin-top:18px;font-size:var(--step-body)}
-.cta-txt .k{margin-top:18px;font-size:var(--step-lead)}
-.cta-txt .btn{margin-top:28px}
+/* ── MÉTODO ──────────────────────────────────────────────────── */
+.stairs{display:grid;grid-template-columns:repeat(7,1fr);gap:14px;align-items:start;margin-top:40px}
+.stairs .st{border-top:3px solid #3A3A3A;padding-top:12px}
+.stairs .st.on{border-top-color:var(--yellow)}
+.stairs .st .n{font-size:10px;color:var(--faint);letter-spacing:.2em}
+.stairs .st .nm{margin-top:6px;font-size:17px}
+.stairs .st p{margin-top:8px;font-size:11px;line-height:1.5;color:#9C9C9C}
+.stairs .st p b{display:block;color:#CFCFCF;font-weight:600;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:3px}
 
-/* ── 10. rodapé sobre a última foto ── */
-.foot{position:relative;height:100svh;min-height:640px;overflow:hidden;color:var(--ink)}
-.foot > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 8%;filter:brightness(.42)}
-.foot-top{position:absolute;top:32px;left:var(--m);right:var(--m);display:flex;justify-content:space-between;gap:32px;z-index:2}
-.foot-top h2{font-size:var(--step-lead);font-weight:500;letter-spacing:0;margin-bottom:10px}
-.foot-top ul{list-style:none;display:grid;gap:6px;font-size:var(--step-body)}
-.foot-top .r{text-align:right}
-.word{position:absolute;left:var(--m);right:var(--m);bottom:56px;z-index:2;font-size:clamp(120px,17vw,280px);line-height:.8;font-weight:300;letter-spacing:-0.04em}
-.legal{position:absolute;left:var(--m);right:var(--m);bottom:18px;z-index:2;font-size:var(--step-small);color:#D9CFC0}
+/* ── CHECKLIST ───────────────────────────────────────────────── */
+.crit{display:grid;grid-template-columns:1fr 1fr;gap:9px 22px;margin-top:12px}
+.crit div,.checks li{position:relative;padding-left:24px;font-size:13px;color:#DADADA;line-height:1.35}
+.crit div::before,.checks li::before{content:"";position:absolute;left:0;top:1px;width:13px;height:13px;border:2px solid var(--yellow)}
+.crit div::after,.checks li::after{content:"";position:absolute;left:4px;top:5px;width:5px;height:5px;background:var(--yellow)}
+.checks{list-style:none}
+.card ul.checks li{padding-left:26px;font-size:14.5px;margin-top:12px;color:#EDEDED}
+.card ul.checks li::before{background:transparent;width:13px;height:13px;top:2px}
+.checks li b{font-weight:600;color:#fff}
 
-/* ── celular ── */
-@media (max-width:820px){
-  .nav{display:none}
-  .hero{grid-template-columns:1fr;padding-left:0}
-  .hero-txt{grid-column:1;padding:20px var(--m) 32px;min-height:auto}
-  .hero h1{margin-top:64px}
-  .hero-ph{grid-column:1;min-height:62svh}
-  .hero-act{display:none}
-  .fig{height:80svh}
-  .fig .big{font-size:clamp(120px,17vw,280px)}
-  .fig .say{left:var(--m);right:var(--m);text-align:left;bottom:auto;top:84px;font-size:var(--step-body);background:rgba(15,13,11,.72);padding:12px 16px}
-  .sub{grid-template-columns:1fr;gap:18px}
-  .items{grid-template-columns:1fr}
-  .it{grid-template-columns:56px 1fr}.it img{width:56px;height:56px}
-  .note p,.note .side{grid-column:1/13}.note .side{margin-top:20px}
-  .band{height:22vh}.track span{font-size:var(--step-display)}
-  .band-txt h2,.band-txt p{grid-column:1/13}.band-txt p{margin-top:16px}
-  .show{grid-template-columns:1fr}
-  .pan{height:auto;min-height:0;display:flex;flex-direction:column}
-  .pan .ph{position:relative;height:60svh;overflow:hidden}
-  .pan img{bottom:auto;top:-10%;width:150%}
-  .pan .row{position:static;flex-direction:column;align-items:stretch}
-  .pan .row .acts .sm{flex:1;text-align:center}
-  .pan h2{font-size:var(--step-lead)}
-  .prev-h h2,.prev-h div{grid-column:1/13}.prev-h div{margin-top:16px}
-  .frame{height:78svh}
-  .facts{grid-template-columns:1fr}
-  .pr-l,.slip{grid-column:1/13}
-  .slip{margin-top:40px;width:92%;justify-self:center}
-  .tiles h2{grid-column:1/13;margin-bottom:24px}
-  .t1,.t2,.t3{grid-column:1/13;grid-row:auto;height:auto}
-  .t1{height:44vw}.t2{height:58vw}.t3{height:80vw}
-  .capts{display:none}
-  .tile figcaption{display:block}
-  .cta{height:auto;grid-template-columns:1fr;padding:56px var(--m) 0}
-  .cta-txt{grid-column:1;order:-1}
-  .cta-ph{grid-column:1;height:55svh;margin:40px calc(-1 * var(--m)) 0}
-  .foot{height:88svh}
-  .foot-top{flex-direction:column;gap:24px}.foot-top .r{text-align:left}
-}
-.tile figcaption{display:none}
-@media (max-width:820px){
-  .tile{display:flex;flex-direction:column;height:auto!important;background:none;overflow:visible;margin-bottom:28px}
-  .tile .box{overflow:hidden}
-  .t1 .box{height:44vw;background:#3A2E25}.t2 .box{height:58vw;background:var(--surface)}.t3 .box{height:80vw;background:var(--field)}
-  .tile figcaption{display:block;margin-top:14px}
-  .tile figcaption h3{font-size:var(--step-lead);font-weight:500;letter-spacing:0}
-  .tile figcaption p{margin-top:6px;font-size:var(--step-body)}
-}
-@media (prefers-reduced-motion:reduce){
-  *{scroll-behavior:auto}
-  .js .rv{opacity:1;transform:none;transition:none}
-  .js .shutter{clip-path:none}.js .shutter img{transform:none}
-  .track{animation:none}
-  .fig img{transform:none;transition:none}
-}
+/* ── DEMONSTRAÇÃO: DO CATÁLOGO AO ANÚNCIO ────────────────────── */
+.demo{display:grid;grid-template-columns:1fr 70px 1.35fr;align-items:stretch;margin-top:26px}
+.arrow{display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:900;color:var(--yellow)}
+.shop{background:#EFEFEF;color:#222;padding:18px 20px}
+.shop .tag,.mlc .tag{font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.shop .tag{color:#777}
+.shop img{display:block;width:220px;margin:12px auto 0}
+.shop .nome{margin-top:12px;font-size:15px;font-weight:300;letter-spacing:.02em;color:#333}
+.shop .obs{margin-top:10px;font-size:11px;color:#666;line-height:1.45}
+.shop .falta{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
+.shop .falta span{font-size:10px;font-weight:600;color:#B42318;border:1px solid #E4A09A;padding:2px 7px}
+.mlc{background:#FFFFFF;color:#222;padding:18px 22px;position:relative}
+.mlc .tag{color:#B08000}
+.mlc .top{display:grid;grid-template-columns:170px 1fr;gap:18px;margin-top:12px}
+.mlc img{width:170px}
+.mlc .cond{font-size:11px;color:#777}
+.mlc .tit{margin-top:4px;font-size:17px;font-weight:600;line-height:1.3;color:#222}
+.mlc .preco{margin-top:10px;font-size:13px;color:#555}
+.mlc .preco b{font-size:22px;font-weight:500;color:#222}
+.mlc .vend{margin-top:10px;font-size:11px;color:#555;display:flex;align-items:center;gap:8px}
+.mlc .vend img{width:92px;background:#000;padding:3px 5px}
+.ficha{margin-top:14px;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #E6E6E6}
+.ficha div{display:grid;grid-template-columns:44% 1fr;font-size:11px;border-bottom:1px solid #EEE;padding:6px 0}
+.ficha div span:first-child{color:#777}
+.ficha div span:last-child{color:#222;font-weight:500}
+.ficha div .pend{color:#B08000;font-weight:500}
+.sim{position:absolute;top:14px;right:16px;font-size:9px;font-weight:800;letter-spacing:.2em;color:#fff;background:#222;padding:4px 8px}
+
+/* ── POR QUE A ORION ─────────────────────────────────────────── */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+.why .card{padding:20px 20px 22px;min-height:178px}
+.why .card h3{font-size:13px}
+.why .card p{font-size:12.5px;line-height:1.55}
+
+/* ── 30 DIAS ─────────────────────────────────────────────────── */
+.weeks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:28px}
+.weeks .card{padding:18px 20px 20px;min-height:262px}
+.weeks .wk{font-size:10px;font-weight:700;letter-spacing:.24em;color:var(--dim);text-transform:uppercase}
+.weeks .card .nm{margin-top:8px;font-size:22px}
+.weeks .card li{font-size:12.5px;margin-top:8px}
+
+/* ── PRÓXIMO PASSO ───────────────────────────────────────────── */
+.next{position:absolute;left:640px;right:72px;top:74px;background:var(--panel);border-top:4px solid var(--yellow);padding:24px 28px 0}
+.next .it{display:grid;grid-template-columns:46px 1fr;align-items:start;padding:12px 0;border-top:1px solid var(--line)}
+.next .it:first-of-type{border-top:0}
+.next .n{font-weight:900;font-size:28px;color:var(--yellow);line-height:1;letter-spacing:-.03em}
+.next .tx{font-size:14.5px;line-height:1.45;color:#D6D6D6}
+.next .tx b{color:var(--white);font-weight:600}
+.next .ctt{margin:14px -28px 0;background:var(--yellow);color:var(--ink);padding:14px 28px;display:flex;justify-content:space-between;align-items:center}
+.next .ctt .l{font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.next .ctt .w{font-size:22px;font-weight:900;letter-spacing:-.01em}
+
+/* ── MODO APRESENTAÇÃO (link) ── */
+html,body{height:100%;overflow:hidden;background:#000}
+.deck{display:block!important;padding:0!important;position:fixed;inset:0}
+.slide{position:absolute!important;left:50%;top:50%;transform-origin:center center;display:none}
+.slide.on{display:block}
+.pageno{display:none}
+.ctrl{position:fixed;z-index:9;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;background:rgba(20,20,20,.88);border:1px solid #333;padding:6px 8px;font:600 12px Rubik,sans-serif;color:#CFCFCF}
+.ctrl button{background:transparent;border:0;color:#E6D3B3;font-size:20px;width:40px;height:34px;cursor:pointer}
+.ctrl button:hover{background:#222}
+.ctrl .n{min-width:64px;text-align:center;letter-spacing:.08em}
+.gire{display:none}
+@media (orientation:portrait) and (max-width:700px){.gire{display:block;position:fixed;z-index:9;left:16px;right:16px;top:16px;text-align:center;font:500 13px Rubik,sans-serif;color:#CFCFCF}}
+.prog{position:fixed;z-index:9;left:0;top:0;height:3px;background:#E6D3B3;transition:width .3s}
+@media print{html,body{overflow:visible;height:auto}.deck{position:static}.slide{position:relative!important;left:0;top:0;transform:none!important;display:block}.ctrl,.prog{display:none}}
 </style>
+
 </head>
 <body>
+<div class="deck">
 
-<!-- abertura -->
-<header class="hero">
-  <div class="hero-txt">
-    <div class="top">
-      <a class="brand" href="#"><img src="img/logo.png" alt="" width="44" height="44">Resgalla</a>
-      <nav class="nav" aria-label="Seções"><a href="#raio-x">Raio X</a><a href="#previa">A loja</a><a href="#propostas">Propostas</a></nav>
-    </div>
-    <h1>Resgalla,<br>agora online</h1>
-    <p class="lead">Proposta da Orion para a fábrica de bolsas de couro legítimo de Oliveira: loja online, Google e marketplace.</p>
-    <div class="acts"><a class="btn" href="#propostas">Ver as propostas</a><a class="link" href="#previa">Ver a prévia da loja</a></div>
-  </div>
-  <figure class="hero-ph shutter" id="hero-ph"><img src="img/porta-vinho-couro-cru.webp" alt="Porta-vinho e porta-lixinho de couro preto com a plaquinha Resgalla, sobre uma pele de couro cru" width="1440" height="1920"></figure>
-  <a class="btn hero-act" href="https://wa.me/5537984143588?text=Ol%C3%A1%2C%20vi%20a%20proposta%20da%20Resgalla" target="_blank" rel="noopener">Falar com a Orion</a>
-</header>
-
-<main>
-<!-- o que já existe -->
-<section class="stats" aria-labelledby="h-tem">
-  <div class="fig rv" id="fig">
-    <img src="img/fachada.webp" alt="Vitrine da loja da Resgalla em Oliveira, com o nome na fachada" width="720" height="1280" loading="lazy">
-    <h2 id="h-tem">O que a Resgalla já tem</h2>
-    <p class="big">+20<small> anos</small></p>
-    <p class="say">de marca própria, com fábrica e loja na Rua Francisco Cambraia Campos, 435.</p>
-  </div>
-  <div class="sub wrap">
-    <div class="rv"><b>4.960</b><span>seguidores no Instagram, com reels toda semana</span></div>
-    <div class="rv"><b>4,9</b><span>de nota no Google, com 18 avaliações</span></div>
-    <div class="rv"><b>36</b><span>modelos de fabricação própria no catálogo</span></div>
-  </div>
-</section>
-
-<!-- raio X -->
-<section class="list wrap" id="raio-x" aria-labelledby="h-canais">
-  <div class="cat rv"><h2 id="h-canais">Onde ela vende hoje</h2><span>4 canais</span></div>
-  <div class="items">
-    <div class="it rv"><img src="img/loja-dentro.webp" alt="" loading="lazy"><div><div class="nm">Instagram @resgalla_<em>ativo</em></div><p>É onde a marca vive: 3.868 publicações. A venda termina no WhatsApp, um atendimento por vez.</p></div></div>
-    <div class="it rv"><img src="img/bolsa-off-white.webp" alt="" loading="lazy"><div><div class="nm">Site na Nuvemshop<em>2 produtos</em></div><p>resgala.lojavirtualnuvem.com.br, sem domínio próprio. <span class="flag">Pagamento “a combinar”.</span></p></div></div>
-    <div class="it rv"><img src="img/porta-vinho.webp" alt="" loading="lazy"><div><div class="nm">Catálogo Sou Acinol<em>47 itens</em></div><p>36 modelos próprios e 11 calçados de marca parceira. <span class="flag">Sem carrinho: “comprar pelo WhatsApp”.</span></p></div></div>
-    <div class="it rv"><img src="img/bolsa-preta.webp" alt="" loading="lazy"><div><div class="nm">Mercado Livre<em>0 anúncios</em></div><p>A marca não aparece. Quem procura bolsa de couro legítimo por lá compra de outra loja.</p></div></div>
-  </div>
-
-  <div class="cat rv"><h3>A coleção no catálogo</h3><span>preços de 12/11/2026</span></div>
-  <div class="items">
-    <div class="it rv"><img src="img/bolsa-cafe.webp" alt="" loading="lazy"><div><div class="nm">Bolsa transversal café<em>R$ 390</em></div><p>Couro legítimo, zíper frontal dourado e alça regulável. Até 10x no cartão.</p></div></div>
-    <div class="it rv"><img src="img/bolsa-croco-caramelo.webp" alt="" loading="lazy"><div><div class="nm">Bolsa de ombro croco caramelo<em>R$ 390</em></div><p>Textura croco, alças longas, plaquinha dourada e franja de couro.</p></div></div>
-    <div class="it rv"><img src="img/bolsa-vermelha-trancada.webp" alt="" loading="lazy"><div><div class="nm">Bolsa vermelha trançada<em>R$ 580</em></div><p>Bolsa de ombro grande em couro legítimo com textura trançada.</p></div></div>
-    <div class="it rv"><img src="img/bolsa-pequena-caramelo.webp" alt="" loading="lazy"><div><div class="nm">Bolsa transversal pequena<em>R$ 198</em></div><p>Couro caramelo, zíper, alça regulável e plaquinha dourada Resgalla.</p></div></div>
-    <div class="it rv"><img src="img/pasta-masculina.webp" alt="" loading="lazy"><div><div class="nm">Pasta masculina de couro<em>R$ 390</em></div><p>Couro marrom, da linha Resgalla para homens.</p></div></div>
-    <div class="it rv"><img src="img/porta-vinho.webp" alt="" loading="lazy"><div><div class="nm">Porta-vinho de couro<em>R$ 98</em></div><p>Com a plaquinha da marca. Também em couro croco, R$ 149,90.</p></div></div>
-  </div>
-  <div class="note rv">
-    <p>O produto é bom e tem preço de fábrica. O que trava a venda online: <b>10 modelos sem preço</b>, 4 com nome genérico como “Bolsa de couro” e fotos com o preço escrito na imagem.</p>
-    <p class="side">Foto com preço e “Black Friday” escritos funciona no story. Na loja online e no marketplace ela é recusada ou derruba o anúncio. Organizar o catálogo uma vez serve para todos os canais.</p>
-  </div>
-</section>
-
-<!-- buscas -->
-<section aria-labelledby="h-busca">
-  <div class="band" aria-hidden="true">
-    <div class="track"><span>bolsa de couro legítimo</span><span>porta vinho de couro</span><span>bolsa masculina couro</span><span>carteira feminina couro</span><span>bolsa de couro legítimo</span><span>porta vinho de couro</span><span>bolsa masculina couro</span><span>carteira feminina couro</span></div>
-  </div>
-  <div class="band-txt wrap">
-    <h2 class="rv" id="h-busca">O comprador já procura</h2>
-    <p class="rv">Essas buscas acontecem todo dia no Mercado Livre: 2.643 anúncios para bolsa de couro legítimo feminina, 1.448 para a masculina, 2.394 para carteira e 977 para porta-vinho de couro. Nenhum é da Resgalla.</p>
-  </div>
-</section>
-
-<!-- o que já vende -->
-<section class="show" aria-labelledby="h-vende">
-  <div class="pan a">
-    <h2 id="h-vende">O que já vende online</h2>
-    <div class="ph"><img src="img/prateleira.webp" alt="Bolsas de couro Resgalla na prateleira da loja" loading="lazy"></div>
-    <div class="row">
-      <div><h3>Bolsa de couro legítimo</h3><p>No Mercado Livre há anúncios com mais de 1.000 vendidas a R$ 161 e R$ 181. As da Resgalla vão de R$ 198 a R$ 580.</p></div>
-      <div class="acts"><a class="sm f" href="https://produto.mercadolivre.com.br/MLB-2901036142-bolsa-feminina-em-couro-legitimo-menegatti-varias-cores-_JM" target="_blank" rel="noopener">Ver no ML</a><a class="sm o" href="https://produto.mercadolivre.com.br/MLB-1538897603-bolsa-feminina-transversal-couro-legitimo-exclusiva-brinde-_JM" target="_blank" rel="noopener">Outro</a></div>
+<!-- ═════ 01 · CAPA ═════ -->
+<section class="slide">
+  <img src="img/porta-vinho.png" alt="Porta-vinho e porta-lixinho de couro Resgalla" style="position:absolute;right:0;top:0;height:720px;width:520px;object-fit:cover;opacity:.92">
+  <div style="position:absolute;right:520px;top:0;bottom:0;width:140px;background:linear-gradient(90deg,#000 0%,rgba(0,0,0,0) 100%);transform:translateX(140px)"></div>
+  <div class="pad" style="right:600px">
+    <img src="img/logo-redondo.png" alt="Resgalla" style="width:150px;display:block">
+    <div class="kicker" style="margin-top:70px">Diagnóstico de oportunidade · novos canais de venda</div>
+    <div class="d" style="font-size:88px;margin-top:18px">A Resgalla</div>
+    <div class="d y" style="font-size:88px;margin-top:4px">vendendo online</div>
+    <div style="margin-top:28px;font-size:18px;color:#CFCFCF;max-width:600px;line-height:1.5">
+      Mais de 20 anos fazendo bolsas e acessórios de couro legítimo em Oliveira.<br><b style="color:#fff;font-weight:600">Um canal novo de venda para o Brasil inteiro.</b>
     </div>
   </div>
-  <div class="pan b">
-    <div class="ph"><img src="img/porta-vinho-croco.webp" alt="Porta-vinho de couro croco caramelo com a plaquinha Resgalla" loading="lazy"></div>
-    <div class="row">
-      <div><h3>Porta-vinho</h3><p>O mais vendido é de couro sintético: R$ 39, mais de 5 mil vendidos. O da Resgalla é couro de verdade, com a marca, a R$ 98.</p></div>
-      <div class="acts"><a class="sm f" href="https://www.mercadolivre.com.br/porta-vinho-caramelo-couro-sintetico-embalagem-luxo-presente/up/MLBU3359525967" target="_blank" rel="noopener">Ver no ML</a><a class="sm o" href="https://resgalabolsas.souacinol.com.br/produto/1630-porta-vinho-de-couro" target="_blank" rel="noopener">O da Resgalla</a></div>
+  <div class="foot" style="right:600px"><span>Preparado pela Orion · Minas Gerais</span><span class="y">Novembro de 2026</span></div>
+</section>
+
+<!-- ═════ 02 · O PONTO DE PARTIDA ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">O ponto de partida</div>
+    <h1 class="d">A Resgalla já tem o que<br><span class="y">leva anos para construir.</span></h1>
+    <div class="rule"></div>
+    <div class="cols c4" style="margin-top:52px">
+      <div><div class="num"><span class="pre">+</span>20<span class="suf"> anos</span></div><div class="nlab">de mercado</div><div class="nsub">marca própria, couro legítimo, loja da fábrica em Oliveira</div></div>
+      <div><div class="num">4.960</div><div class="nlab">seguidores no Instagram</div><div class="nsub">3.868 publicações: bolsas, sapatos, acessórios, linha croco, linha masculina</div></div>
+      <div><div class="num">4,9</div><div class="nlab">no Google</div><div class="nsub">com 18 avaliações</div></div>
+      <div><div class="num y">0</div><div class="nlab">anúncios da marca no<br>Mercado Livre</div><div class="nsub">busca por “resgalla” em 12/11/2026</div></div>
+    </div>
+    <div class="quote" style="margin-top:74px">
+      <p>Fábrica, marca, coleção, personalização e clientes fiéis já existem.
+      O que falta não é produto. <b>É um lugar onde quem não conhece a Resgalla consiga comprar.</b></p>
     </div>
   </div>
+  <div class="pageno">0 2</div>
+  <div class="foot"><span>Fontes: instagram.com/resgalla_ · Google Maps · mercadolivre.com.br · 12/11/2026</span><span>Ponto de partida</span></div>
 </section>
 
-<!-- prévia -->
-<section class="prev wrap" id="previa" aria-labelledby="h-previa">
-  <div class="prev-h">
-    <h2 class="rv" id="h-previa">A loja aberta para comprar</h2>
-    <div class="rv"><p>Uma prévia com 12 modelos da Resgalla, as fotos e os preços do catálogo dela. Role e clique nos filtros: é assim que o cliente compra sem chamar no WhatsApp.</p><a class="link" href="loja/" target="_blank" rel="noopener">Abrir a prévia em tela cheia</a></div>
-  </div>
-  <div class="frame rv" data-ui><iframe src="loja/" title="Prévia da loja online da Resgalla" loading="lazy"></iframe></div>
-  <div class="facts">
-    <div class="rv"><h3>Fábrica, não revenda</h3><p>Quem fabrica controla modelo, cor, prazo e custo. Ninguém mais tem a mesma bolsa.</p></div>
-    <div class="rv"><h3>Couro legítimo</h3><p>Outra faixa de produto, para quem procura qualidade ou um presente de verdade.</p></div>
-    <div class="rv"><h3>Personalização</h3><p>Porta-vinhos, carteiras e bolsas com nome ou logo, para empresas e datas especiais.</p></div>
-  </div>
-</section>
-
-<!-- propostas -->
-<section class="pricing wrap" id="propostas" aria-labelledby="h-prop">
-  <div class="pr">
-    <div class="pr-l">
-      <h2 class="rv" id="h-prop">O que propomos</h2>
-      <p class="rv">Três frentes. Marque o que faz sentido para a Resgalla e veja a conta ao lado.</p>
-      <div class="opts rv" id="opts">
-        <label class="opt"><input type="checkbox" value="site" checked><div><b>Site e-commerce e Google Meu Negócio</b><span>Loja com carrinho, pagamento e frete. Catálogo organizado. Perfil do Google refeito, com fotos, horário e link para a loja.</span></div><em>R$ 1.800</em></label>
-        <label class="opt"><input type="checkbox" value="ads"><div><b>Tráfego no Google Ads</b><span>Anúncios para quem já procura bolsa de couro e porta-vinho, levando direto para a loja.</span></div><em>a combinar</em></label>
-        <label class="opt"><input type="checkbox" value="mkt"><div><b>Novo canal: marketplace</b><span>Implantação no CNPJ da Resgalla, com pesquisa, modelos, anúncios e preço com a conta feita. Acompanhamento mensal.</span></div><em>R$ 5.000</em></label>
+<!-- ═════ 03 · O CENÁRIO ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">O cenário</div>
+    <h1 class="d md">Uma marca com 20 anos.<br><span class="y">Que só vende para quem já conhece.</span></h1>
+    <div class="rule" style="margin-top:18px"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px">
+      <div class="card muted tight" style="min-height:230px">
+        <h3 style="color:#8E8E8E;margin-top:0">Hoje</h3>
+        <ul>
+          <li>A venda passa pela <b>loja da fábrica</b>, pelo <b>Instagram</b> e pelo <b>WhatsApp</b>.</li>
+          <li>Cada venda depende de <b>alguém atender</b>, mandar foto e combinar o envio.</li>
+          <li>O alcance é quem <b>já segue</b> a Resgalla ou passa na loja.</li>
+          <li>Quem procura bolsa de couro legítimo no Mercado Livre hoje <b>compra de outra marca</b>.</li>
+        </ul>
       </div>
-      <div class="sim rv" id="sim" hidden>
-        <label for="vendas">Se o marketplace vender por mês <output id="vout">R$ 10.000</output></label>
-        <input type="range" id="vendas" min="1000" max="50000" step="1000" value="10000">
-        <p>Simulação. O acompanhamento é 5% do que o canal vender no mês.</p>
+      <div class="card tight" style="min-height:230px">
+        <h3 class="y" style="margin-top:0">Como pode ficar</h3>
+        <ul>
+          <li>Uma loja da Resgalla no Mercado Livre, <b>no nome e no CNPJ da Resgalla</b>, aberta 24 horas.</li>
+          <li><b>Visível para quem já procura</b> bolsa de couro, porta-vinho e acessórios. A posição na busca se constrói com vendas e reputação.</li>
+          <li>O <b>Instagram continua como vitrine</b>. O Mercado Livre soma clientes de fora sem tirar os de Oliveira.</li>
+          <li><b>A mesma produção</b>, com os modelos que a fábrica já faz.</li>
+        </ul>
       </div>
-      <a class="btn rv" id="quero" href="https://wa.me/5537984143588" target="_blank" rel="noopener">Quero conversar sobre isso</a>
     </div>
-    <div class="slip rv" aria-live="polite" data-ui>
-      <h3>Proposta Resgalla</h3>
-      <p class="dt">Orion · 12 de novembro de 2026</p>
-      <div class="rows" id="rows"></div>
-      <div class="bar"></div>
-      <div class="tot"><span>Investimento inicial</span><b id="total">R$ 1.800</b></div>
-      <div class="mes" id="mes"></div>
-      <p class="fine">Verba dos anúncios no Google paga direto ao Google. Valores sem promessa de faturamento.</p>
+    <div class="quote bottom">
+      <p>Pense num <b>novo canal de vendas</b>: sem ponto novo, sem vitrine nova. Ele começa com <b>a produção e a marca que a Resgalla já tem</b>.</p>
     </div>
   </div>
+  <div class="pageno">0 3</div>
+  <div class="foot"><span>Fontes: instagram.com/resgalla_ · busca “resgalla” em mercadolivre.com.br · 12/11/2026</span><span>Cenário</span></div>
 </section>
 
-<!-- como trabalhamos -->
-<section class="how wrap" aria-labelledby="h-como">
-  <div class="tiles">
-    <h2 class="rv" id="h-como">Como trabalhamos</h2>
-    <figure class="tile t1"><div class="box"><img src="img/porta-vinho.webp" alt="Foto de story com preço escrito, como está hoje no catálogo" decoding="async"></div><figcaption><h3>Organizar o catálogo</h3><p>Nome, preço, medidas e foto limpa de cada modelo.</p></figcaption></figure>
-    <figure class="tile t2"><div class="box"><img src="img/bolsa-croco-caramelo.webp" alt="Bolsa de ombro croco caramelo Resgalla" decoding="async"></div><figcaption><h3>Abrir a loja e o Google</h3><p>Site com compra, Google Meu Negócio e anúncios.</p></figcaption></figure>
-    <figure class="tile t3"><div class="box"><img src="img/bolsa-vermelha-trancada.webp" alt="Modelo com a bolsa vermelha trançada Resgalla" decoding="async"></div><figcaption><h3>Vender e acompanhar</h3><p>Marketplace no CNPJ da Resgalla e ajuste mês a mês.</p></figcaption></figure>
+<!-- ═════ RAIO X ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">Raio X · onde a Resgalla está hoje</div>
+    <h1 class="d md">Três vitrines online.<br><span class="y">Nenhuma fecha a venda sozinha.</span></h1>
+    <div class="rule" style="margin-top:18px"></div>
+    <table class="t" style="margin-top:18px">
+      <thead><tr><th style="width:20%">Canal</th><th style="width:36%">O que tem</th><th>O que falta</th></tr></thead>
+      <tbody>
+        <tr><td class="cifel">Instagram <span class="mlb" style="display:block;color:#777;font-size:10px">@resgalla_</span></td><td>4.960 seguidores, 3.868 publicações, reels toda semana</td><td>A venda termina no WhatsApp, um atendimento por vez</td></tr>
+        <tr><td class="cifel">Site <span style="display:block;color:#777;font-size:10px">Nuvemshop</span></td><td><a href="https://resgala.lojavirtualnuvem.com.br/">resgala.lojavirtualnuvem.com.br</a>, sem domínio próprio</td><td><b style="color:#fff">2 produtos</b> no ar e pagamento “a combinar”</td></tr>
+        <tr><td class="cifel">Catálogo online <span style="display:block;color:#777;font-size:10px">Sou Acinol</span></td><td><a href="https://resgallabolsas.souacinol.com.br/">47 produtos</a>: 36 de fabricação própria e 11 calçados de marca parceira</td><td>Sem carrinho (“comprar pelo WhatsApp”). <b style="color:#fff">10 itens próprios sem preço</b>, 4 com nome genérico, fotos com preço escrito na imagem</td></tr>
+        <tr><td class="cifel">Mercado Livre</td><td>Nada</td><td><b style="color:#fff">0 anúncios</b> da marca</td></tr>
+      </tbody>
+    </table>
+    <div class="quote bottom">
+      <p>O produto, a marca e a foto de modelo já existem. <b>Falta organizar o catálogo uma vez e levar para onde o comprador já procura.</b></p>
+    </div>
   </div>
-  <div class="capts">
-    <div class="rv"><h3>Organizar o catálogo</h3><p>Nome, preço, medidas e foto limpa de cada modelo. É a base de todos os canais.</p></div>
-    <div class="rv"><h3>Abrir a loja e o Google</h3><p>Site com carrinho, Google Meu Negócio refeito e anúncios para quem já procura.</p></div>
-    <div class="rv"><h3>Vender e acompanhar</h3><p>Marketplace no CNPJ da Resgalla, com a conta de margem feita modelo por modelo e ajuste mês a mês. Atendimento e devolução definidos juntos.</p></div>
-  </div>
+  <div class="foot"><span>Fontes: instagram.com/resgalla_ · resgala.lojavirtualnuvem.com.br · resgallabolsas.souacinol.com.br · 12/11/2026</span><span>Raio X</span></div>
 </section>
 
-<!-- fechamento -->
-<section class="cta" aria-labelledby="h-fim">
-  <div class="cta-ph"><img src="img/bolsa-preta.webp" alt="Bolsa transversal de couro preto Resgalla" loading="lazy"></div>
-  <div class="cta-txt">
-    <h2 class="rv" id="h-fim">A demanda já existe</h2>
-    <p class="rv">O produto já é da Resgalla. Falta estar online do jeito certo.</p>
-    <p class="k rv">Começa com R$ 1.800</p>
-    <a class="btn dark rv" href="https://wa.me/5537984143588?text=Ol%C3%A1%2C%20vi%20a%20proposta%20da%20Resgalla%20e%20quero%20conversar" target="_blank" rel="noopener">Falar com a Orion</a>
+<!-- ═════ 04 · A DEMANDA JÁ ESTÁ LÁ ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">Pesquisa feita pela Orion no Mercado Livre</div>
+    <h1 class="d md">A demanda <span class="y">já está lá.</span></h1>
+    <div class="rule" style="margin-top:18px"></div>
+    <table class="t" style="margin-top:20px">
+      <thead><tr><th style="width:11%">Linha</th><th style="width:22%">O que a Resgalla tem</th><th>Anúncio no Mercado Livre <span style="color:#777;letter-spacing:.04em;text-transform:none">(clique para abrir)</span></th><th style="width:13%">Comparação</th><th class="r" style="width:10%">Vendidos*</th><th class="r" style="width:8%">Preço</th></tr></thead>
+      <tbody>
+        <tr><td class="line">Bolsas</td><td class="cifel">Bolsas femininas de couro legítimo</td><td><a href="https://produto.mercadolivre.com.br/MLB-2901036142-bolsa-feminina-em-couro-legitimo-menegatti-varias-cores-_JM">Bolsa feminina em couro legítimo · Menegatti<span class="mlb">MLB2901036142</span></a></td><td><span class="eq same">Mesmo tipo</span></td><td class="sold r">+1.000</td><td class="price r">R$ 181</td></tr>
+        <tr><td class="line">Bolsas</td><td class="cifel">(mesma linha)</td><td><a href="https://produto.mercadolivre.com.br/MLB-1538897603-bolsa-feminina-transversal-couro-legitimo-exclusiva-brinde-_JM">Bolsa feminina transversal couro legítimo<span class="mlb">MLB1538897603</span></a></td><td><span class="eq same">Mesmo tipo</span></td><td class="sold r">+1.000</td><td class="price r">R$ 161</td></tr>
+        <tr><td class="line">Bolsas</td><td class="cifel">(mesma linha)</td><td><a href="https://produto.mercadolivre.com.br/MLB-3986705719-bolsa-de-couro-legitimo-feminina-alca-de-mo-e-transversal-_JM">Bolsa de couro legítimo, alça de mão e transversal<span class="mlb">MLB3986705719</span></a></td><td><span class="eq same">Mesmo tipo</span></td><td class="sold r">+500</td><td class="price r">R$ 155</td></tr>
+        <tr><td class="line">Masculina</td><td class="cifel">Linha Resgalla para homens</td><td><a href="https://www.mercadolivre.com.br/shoulder-bag-masculina-couro-legitimo/up/MLBU3442920185">Shoulder bag masculina couro legítimo<span class="mlb">MLBU3442920185</span></a></td><td><span class="eq">Mesma família</span></td><td class="sold r">+100</td><td class="price r">R$ 180</td></tr>
+        <tr><td class="line">Bebidas</td><td class="cifel">Porta-vinho de couro legítimo</td><td><a href="https://www.mercadolivre.com.br/porta-vinho-caramelo-couro-sintetico-embalagem-luxo-presente/up/MLBU3359525967">Porta-vinho caramelo, couro sintético<span class="mlb">MLBU3359525967</span></a></td><td><span class="eq">Mesmo uso, sintético</span></td><td class="sold r">+5 mil</td><td class="price r">R$ 39</td></tr>
+        <tr><td class="line">Bebidas</td><td class="cifel">(mesma linha)</td><td><a href="https://produto.mercadolivre.com.br/MLB-4435632338-bolsa-porta-vinho-wine-bag-termica-grande-couro-impermeavel-_JM">Bolsa porta-vinho wine bag térmica grande<span class="mlb">MLB4435632338</span></a></td><td><span class="eq">Mesma família</span></td><td class="sold r">+1.000</td><td class="price r">R$ 149</td></tr>
+      </tbody>
+    </table>
+    <div class="src" style="margin-top:12px">*Contador acumulado exibido pelo Mercado Livre, arredondado por ele. Mostra demanda já realizada, não venda por mês. Preço exibido na busca em 12/11/2026, pode ter desconto do dia. <b style="color:#999">Mesma família</b> = mesmo uso, modelo diferente do da Resgalla.</div>
   </div>
+  <div class="pageno">0 4</div>
+  <div class="foot"><span>Fonte: busca e páginas dos produtos em mercadolivre.com.br · 12/11/2026</span><span>Demanda</span></div>
 </section>
-</main>
 
-<footer class="foot">
-  <img src="img/loja-dentro.webp" alt="" loading="lazy">
-  <div class="foot-top">
-    <div><h2>De onde vem cada número</h2>
-      <ul>
-        <li><a class="link" href="https://www.instagram.com/resgalla_/" target="_blank" rel="noopener">Instagram @resgalla_</a></li>
-        <li><a class="link" href="https://resgallabolsas.souacinol.com.br/" target="_blank" rel="noopener">Catálogo Sou Acinol</a> · <a class="link" href="https://resgala.lojavirtualnuvem.com.br/" target="_blank" rel="noopener">Loja Nuvemshop</a></li>
-        <li><a class="link" href="https://lista.mercadolivre.com.br/bolsa-de-couro-legitimo-feminina" target="_blank" rel="noopener">Buscas no Mercado Livre</a> · <a class="link" href="https://lista.mercadolivre.com.br/resgalla" target="_blank" rel="noopener">“resgalla” no ML</a></li>
-      </ul></div>
-    <div class="r"><h2>Orion</h2><ul><li><a class="link" href="https://wa.me/5537984143588" target="_blank" rel="noopener">WhatsApp (37) 98414-3588</a></li><li>Minas Gerais</li></ul></div>
+<!-- ═════ 05 · DEMANDA × CONCORRÊNCIA × MARGEM ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">Leitura da pesquisa</div>
+    <h1 class="d">Demanda existe.<br><span class="y">Concorrência também.</span></h1>
+    <div class="rule"></div>
+    <div class="dcm">
+      <div class="hd"></div>
+      <div class="hd">Bolsa feminina de couro<span>linha principal · mesmo tipo</span></div>
+      <div class="hd">Bolsa masculina de couro<span>linha para homens · mesma família</span></div>
+      <div class="hd">Porta-vinho de couro<span>linha de presentes · mesmo uso</span></div>
+
+      <div class="rl dem">Demanda<span>o que os anúncios já venderam</span></div>
+      <div><div class="v y">+1.000</div><div class="s">em cada um de 2 anúncios, de R$ 161 a R$ 181</div></div>
+      <div><div class="v y">+100</div><div class="s">no anúncio da tabela, R$ 180</div></div>
+      <div><div class="v y">+5 mil</div><div class="s">no porta-vinho sintético de R$ 39</div></div>
+
+      <div class="rl">Concorrência<span>resultados da busca: indicam a disputa, não medem</span></div>
+      <div><div class="v">2.643</div><div class="s">resultados para “bolsa de couro legítimo feminina”</div></div>
+      <div><div class="v">1.448</div><div class="s">resultados para “bolsa masculina couro legítimo”</div></div>
+      <div><div class="v">977</div><div class="s">resultados para “porta vinho de couro”</div></div>
+
+      <div class="rl">Margem<span>custo da Resgalla, comissão, frete e imposto</span></div>
+      <div><div class="v pend">A calcular</div><div class="s">com o custo da fábrica</div></div>
+      <div><div class="v pend">A calcular</div><div class="s">com o custo da fábrica</div></div>
+      <div><div class="v pend">A calcular</div><div class="s">com o custo da fábrica</div></div>
+    </div>
+    <div class="quote bottom">
+      <p>O número de resultados <b>indica concorrência</b>. A <b>demanda</b> aparece no que os anúncios já venderam. E a <b>margem</b> só aparece com o custo da Resgalla.</p>
+    </div>
   </div>
-  <p class="word" aria-hidden="true">Resgalla</p>
-  <p class="legal">Proposta da Orion para a Resgalla. Dados consultados em 12/11/2026. Fotos da própria Resgalla, do Instagram e do catálogo público. Nada aqui é promessa de faturamento.</p>
-</footer>
+  <div class="pageno">0 5</div>
+  <div class="foot"><span>Fonte: resultados da busca e páginas dos produtos em mercadolivre.com.br · 12/11/2026</span><span>Leitura</span></div>
+</section>
 
+<!-- ═════ 06 · O QUE SÓ A FÁBRICA TEM ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">O que a pesquisa mostrou</div>
+    <h1 class="d md">Quem lidera vende sintético.<br><span class="y">A Resgalla faz couro legítimo.</span></h1>
+    <div class="rule" style="margin-top:18px"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:30px">
+      <div class="card"><div class="idx">01</div><h3>Fábrica, não revenda</h3><p>Quem fabrica controla modelo, cor, prazo e custo. Revendedor disputa o mesmo produto com outros revendedores. A Resgalla tem modelo que ninguém mais tem.</p></div>
+      <div class="card"><div class="idx">02</div><h3>Couro legítimo</h3><p>No porta-vinho, o anúncio com +5 mil vendidos é de couro sintético. Couro legítimo é outra faixa de produto, para quem procura presente de verdade.</p></div>
+      <div class="card"><div class="idx">03</div><h3>Personalização</h3><p>A Resgalla já faz peças personalizadas e porta-bebidas. No Mercado Livre, o porta-vinho mais vendido se apresenta como “embalagem luxo presente”: é compra de presente.</p></div>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:16px;align-items:baseline;border:1px dashed #3A3A3A;padding:12px 18px">
+      <span class="kicker" style="white-space:nowrap">Para validar juntos</span>
+      <span style="font-size:13px;color:#CFCFCF">Quantos modelos a fábrica tem hoje, quanto consegue produzir por mês e quais vendem mais na loja.</span>
+    </div>
+    <div class="quote bottom">
+      <p>No Mercado Livre, <b>marca própria não briga só por preço</b>. Briga por produto que só ela tem.</p>
+    </div>
+  </div>
+  <div class="pageno">0 6</div>
+  <div class="foot"><span>Fontes: instagram.com/resgalla_ · mercadolivre.com.br · 12/11/2026</span><span>Diferencial</span></div>
+</section>
+
+<!-- ═════ PRÉVIA ═════ -->
+<section class="slide">
+  <div class="pad" style="top:40px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:20px">
+      <div><div class="kicker">Prévia · navegue à vontade</div>
+      <h1 class="d" style="font-size:40px">Como a Resgalla <span class="y">pode aparecer.</span></h1></div>
+      <a href="loja/" target="_blank" style="border:1px solid var(--yellow);color:var(--yellow);padding:12px 18px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap">Abrir em tela cheia ↗</a>
+    </div>
+    <iframe src="loja/" title="Prévia da loja online da Resgalla" style="margin-top:18px;width:100%;height:520px;border:1px solid #333;background:#F6F1E8"></iframe>
+  </div>
+  <div class="foot"><span>Prévia feita pela Orion com fotos e preços do catálogo público da Resgalla · não publicada como loja</span><span>Prévia</span></div>
+</section>
+
+<!-- ═════ PROPOSTAS ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">O que propomos para a Resgalla</div>
+    <h1 class="d md">Três frentes.<br><span class="y">Começa por onde fizer mais sentido.</span></h1>
+    <div class="rule" style="margin-top:18px"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:26px">
+      <div class="card" style="min-height:372px;display:flex;flex-direction:column">
+        <div class="idx">01</div><h3>Site e-commerce + Google Meu Negócio</h3>
+        <ul class="tight" style="flex:1">
+          <li>Loja online com <b>carrinho, pagamento e frete</b>: o cliente entra e compra sem chamar no WhatsApp</li>
+          <li>Catálogo organizado: nome, preço, medidas e foto de cada modelo</li>
+          <li><b>Google Meu Negócio refeito</b>: fotos, horário, produtos e link para a loja</li>
+        </ul>
+        <div style="border-top:1px solid #333;padding-top:14px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">Investimento</div><div class="num" style="font-size:40px;margin-top:6px"><span class="cur">R$</span>1.800</div><div class="nsub">valor único</div></div>
+      </div>
+      <div class="card" style="min-height:372px;display:flex;flex-direction:column">
+        <div class="idx">02</div><h3>Tráfego no Google Ads</h3>
+        <ul class="tight" style="flex:1">
+          <li>Anúncios para quem <b>já procura</b> bolsa de couro, porta-vinho e presente</li>
+          <li>Campanhas levando direto para a loja online</li>
+          <li>Acompanhamento do que vira venda</li>
+        </ul>
+        <div style="border-top:1px solid #333;padding-top:14px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">Investimento</div><div class="num" style="font-size:30px;margin-top:10px;color:#BDBDBD">A combinar</div><div class="nsub">verba de anúncio paga direto ao Google</div></div>
+      </div>
+      <div class="card on-y" style="min-height:372px;display:flex;flex-direction:column">
+        <div class="idx">03</div><h3>Novo canal: marketplace</h3>
+        <ul class="tight" style="flex:1">
+          <li>Implantação da Resgalla no marketplace, <b>no CNPJ da Resgalla</b></li>
+          <li>Pesquisa, seleção dos modelos, anúncios e preço com a conta feita</li>
+          <li>Acompanhamento mensal: números, ajustes e próximos modelos</li>
+        </ul>
+        <div style="border-top:1px solid rgba(0,0,0,.25);padding-top:14px"><div style="font-size:10px;letter-spacing:.18em;text-transform:uppercase">Investimento</div><div class="num" style="font-size:40px;margin-top:6px"><span class="cur">R$</span>5.000</div><div class="nsub">implantação + <b>5% das vendas do canal</b> por mês</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Resgalla · Orion · proposta de 12/11/2026</span><span>Propostas</span></div>
+</section>
+
+<!-- ═════ 07 · ESTREIA CONTROLADA ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">Frente 03 · marketplace · estreia controlada</div>
+    <h1 class="d">A coleção inteira<br><span class="y">não sobe de uma vez.</span></h1>
+    <div class="rule"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:26px">
+      <div>
+        <p style="margin-top:4px;font-size:15px;line-height:1.55;color:#CFCFCF;max-width:520px">
+          A estreia começa com <b style="color:#fff">os modelos que a fábrica já produz</b> e que passam por <b style="color:#fff">todos estes critérios</b>:
+        </p>
+        <div class="crit">
+          <div>Demanda comprovada</div><div>Comissão do Mercado Livre</div>
+          <div>Nível de concorrência</div><div>Impacto do frete</div>
+          <div>Preço praticado</div><div>Margem final</div>
+          <div>Custo da fábrica</div><div>Capacidade de produção</div>
+        </div>
+      </div>
+      <div class="card" style="padding:22px 28px 26px">
+        <h3 class="y" style="margin-top:0">Como a estreia é montada</h3>
+        <ul class="checks">
+          <li><b>Modelos da produção atual</b></li>
+          <li><b>Sem criar coleção nova</b> para começar</li>
+          <li>Conta <b>no nome e no CNPJ da Resgalla</b></li>
+          <li>Conta de margem <b>feita modelo por modelo</b></li>
+          <li>Novos modelos só entram <b>com base nos números da própria conta</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="quote bottom">
+      <p><b>Modelo que vende muito, mas não deixa margem, não entra.</b></p>
+    </div>
+  </div>
+  <div class="pageno">0 7</div>
+  <div class="foot"><span>Resgalla × Mercado Livre</span><span>Estreia</span></div>
+</section>
+
+<!-- ═════ 08 · MÉTODO ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">Frente 03 · método · o que cada etapa entrega</div>
+    <h1 class="d">Da fábrica<br><span class="y">à primeira venda.</span></h1>
+    <div class="rule"></div>
+    <div class="stairs">
+      <div class="st on"><div class="n">01</div><div class="nm d">Pesquisa</div><p><b>Entrega</b>Planilha com demanda, preço e concorrência de cada modelo.</p></div>
+      <div class="st on" style="margin-top:16px"><div class="n">02</div><div class="nm d">Seleção</div><p><b>Entrega</b>Os modelos de estreia, com a conta de margem feita.</p></div>
+      <div class="st on" style="margin-top:32px"><div class="n">03</div><div class="nm d">Construção</div><p><b>Entrega</b>Títulos, fichas e imagens para a Resgalla aprovar.</p></div>
+      <div class="st" style="margin-top:48px"><div class="n">04</div><div class="nm d">Publicação</div><p><b>Entrega</b>Loja no ar, com a identidade da Resgalla.</p></div>
+      <div class="st" style="margin-top:64px"><div class="n">05</div><div class="nm d">Operação</div><p><b>Entrega</b>Rotina de pedidos e checklist de envio.</p></div>
+      <div class="st" style="margin-top:80px"><div class="n">06</div><div class="nm d">Otimização</div><p><b>Entrega</b>Ajuste de preço e título pelos dados da conta.</p></div>
+      <div class="st on" style="margin-top:96px"><div class="n y">07</div><div class="nm d y">Escala</div><p><b>Entrega</b>Os próximos modelos, com a mesma conta feita.</p></div>
+    </div>
+    <div class="quote bottom">
+      <p>Marketplace não é só cadastrar produto: é pesquisa, oferta, operação e reputação. <b>O que funciona vira rotina. O que não funciona sai.</b></p>
+    </div>
+  </div>
+  <div class="pageno">0 8</div>
+  <div class="foot"><span>Resgalla × Mercado Livre</span><span>Método</span></div>
+</section>
+
+<!-- ═════ 09 · QUEM FAZ O QUÊ ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">Responsabilidades</div>
+    <h1 class="d">Quem faz <span class="y">o quê</span></h1>
+    <div class="rule"></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:28px">
+      <div class="card tight" style="min-height:300px">
+        <h3 class="y" style="margin-top:0">Orion</h3>
+        <ul>
+          <li>Pesquisa de mercado e seleção dos modelos</li>
+          <li>Configuração da conta da Resgalla</li>
+          <li>Títulos, fichas técnicas e descrições</li>
+          <li>Imagens dos anúncios</li>
+          <li>Preço com tarifa, frete e imposto na conta</li>
+          <li>Acompanhamento dos números: vendas, perguntas e reputação</li>
+          <li>Ajuste de preço e título conforme os dados</li>
+          <li>Registro do processo: planilhas e checklists</li>
+        </ul>
+      </div>
+      <div class="card light tight" style="min-height:300px">
+        <h3 style="margin-top:0">Resgalla <span style="font-weight:500;letter-spacing:.02em;text-transform:none;color:#8E8E8E">· boa parte já é rotina da loja</span></h3>
+        <ul>
+          <li>Passar custo e estoque de cada modelo</li>
+          <li>Validar os modelos da estreia</li>
+          <li>Passar medidas, materiais e cores</li>
+          <li>Emitir a nota fiscal</li>
+          <li>Separar, embalar e despachar os pedidos</li>
+          <li>Manter o estoque atualizado</li>
+          <li>Avisar particularidades comerciais, como acordos com marcas parceiras</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:16px;align-items:baseline;border:1px dashed #3A3A3A;padding:12px 18px">
+      <span class="kicker" style="white-space:nowrap">A definir juntos</span>
+      <span style="font-size:13px;color:#CFCFCF">Quem responde as perguntas dos compradores, em qual horário, e como funcionam as devoluções.</span>
+    </div>
+  </div>
+  <div class="pageno">0 9</div>
+  <div class="foot"><span>Resgalla × Mercado Livre</span><span>Responsabilidades</span></div>
+</section>
+
+<!-- ═════ 10 · ENCERRAMENTO + PRÓXIMO PASSO ═════ -->
+<section class="slide">
+  <div style="position:absolute;left:72px;right:72px;bottom:84px;height:1px;background:var(--yellow)"></div>
+  <div class="pad">
+    <div class="d" style="font-size:58px;margin-top:30px">A demanda<br>já existe.</div>
+    <div class="d" style="font-size:58px;margin-top:18px">O produto<br>já é da Resgalla.</div>
+    <div class="d y" style="font-size:58px;margin-top:18px">Falta estar lá<br>do jeito certo.</div>
+  </div>
+  <div class="next">
+    <div class="kicker">Próximo passo</div>
+    <div style="margin-top:8px">
+      <div class="it"><div class="n">1</div><div class="tx">Uma <b>conversa</b> para entender a produção e os modelos que mais vendem.</div></div>
+      <div class="it"><div class="n">2</div><div class="tx">A Resgalla envia a <b>lista de modelos com custo e estoque</b>, tratada com sigilo. Se preferir, começamos pelas linhas prioritárias.</div></div>
+      <div class="it"><div class="n">3</div><div class="tx">A Orion cruza os modelos com o Mercado Livre e devolve a <b>estreia com a conta feita</b>, junto com a proposta.</div></div>
+      <div class="it"><div class="n">4</div><div class="tx">Com a estreia e a proposta aprovadas, <b>começa a implantação</b>.</div></div>
+    </div>
+    <a class="ctt" href="https://wa.me/5537984143588"><span class="l">Orion · Minas Gerais<br>WhatsApp</span><span class="w">(37) 98414-3588</span></a>
+  </div>
+  <div class="foot"><span>Resgalla × Mercado Livre · Orion</span><span>A reputação só começa a contar quando a conta começa a vender</span></div>
+</section>
+
+<!-- ═════ 11 · FONTES ═════ -->
+<section class="slide">
+  <div class="pad">
+    <div class="kicker">Anexo</div>
+    <h1 class="d" style="font-size:40px">De onde vem <span class="y">cada número</span></h1>
+    <div class="rule"></div>
+    <table class="t" style="margin-top:20px;font-size:11.5px">
+      <thead><tr><th style="width:27%">Dado</th><th>Fonte (clique para abrir)</th></tr></thead>
+      <tbody>
+        <tr><td class="cifel">Mais de 20 anos · couro legítimo · loja da fábrica · personalização</td><td><a href="https://www.instagram.com/resgalla_/">instagram.com/resgalla_</a> (perfil e publicação “A Resgalla é tradição!”)</td></tr>
+        <tr><td class="cifel">4.960 seguidores · 3.868 publicações</td><td><a href="https://www.instagram.com/resgalla_/">instagram.com/resgalla_</a></td></tr>
+        <tr><td class="cifel">Nota 4,9 com 18 avaliações</td><td><a href="https://www.google.com/maps/place/Resgalla+Bolsas/data=!4m7!3m6!1s0xa064935694387d:0xd4e7821921f2d20d!8m2!3d-20.6951172!4d-44.8269638!16s%2Fg%2F11b8t573m_">Resgalla Bolsas no Google Maps</a></td></tr>
+        <tr><td class="cifel">0 anúncios da marca no Mercado Livre</td><td><a href="https://lista.mercadolivre.com.br/resgalla">Busca por “resgalla” em mercadolivre.com.br</a> (os resultados são de outros produtos)</td></tr>
+        <tr><td class="cifel">Anúncios: vendidos e preço</td><td>
+          <a href="https://produto.mercadolivre.com.br/MLB-2901036142-bolsa-feminina-em-couro-legitimo-menegatti-varias-cores-_JM">MLB2901036142</a> ·
+          <a href="https://produto.mercadolivre.com.br/MLB-1538897603-bolsa-feminina-transversal-couro-legitimo-exclusiva-brinde-_JM">MLB1538897603</a> ·
+          <a href="https://produto.mercadolivre.com.br/MLB-3986705719-bolsa-de-couro-legitimo-feminina-alca-de-mo-e-transversal-_JM">MLB3986705719</a> ·
+          <a href="https://www.mercadolivre.com.br/shoulder-bag-masculina-couro-legitimo/up/MLBU3442920185">MLBU3442920185</a> ·
+          <a href="https://www.mercadolivre.com.br/porta-vinho-caramelo-couro-sintetico-embalagem-luxo-presente/up/MLBU3359525967">MLBU3359525967</a> ·
+          <a href="https://produto.mercadolivre.com.br/MLB-4435632338-bolsa-porta-vinho-wine-bag-termica-grande-couro-impermeavel-_JM">MLB4435632338</a></td></tr>
+        <tr><td class="cifel">Resultados da busca (concorrência)</td><td>
+          <a href="https://lista.mercadolivre.com.br/bolsa-de-couro-legitimo-feminina">bolsa de couro legítimo feminina</a> ·
+          <a href="https://lista.mercadolivre.com.br/bolsa-masculina-couro-legitimo">bolsa masculina couro legítimo</a> ·
+          <a href="https://lista.mercadolivre.com.br/porta-vinho-de-couro">porta vinho de couro</a></td></tr>
+      </tbody>
+    </table>
+    <div class="src" style="margin-top:14px;max-width:1080px">Todos os dados foram consultados em 12/11/2026 e podem mudar. Nenhum número foi estimado por nós. Os modelos de estreia são proposta de partida. Nada neste material é promessa de faturamento.</div>
+  </div>
+  <div class="foot"><span>Resgalla × Mercado Livre · Orion</span><span>Fontes</span></div>
+</section>
+
+</div>
+<div class="prog" id="prog"></div>
+<div class="gire">Gire o celular para ver maior</div>
+<div class="ctrl"><button id="ant" aria-label="Anterior">‹</button><span class="n" id="num"></span><button id="prox" aria-label="Próximo">›</button></div>
 <script>
-document.documentElement.classList.add('js');
 (function(){
-  const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  // abertura: a foto abre de cima para baixo
-  const hp = document.getElementById('hero-ph');
-  requestAnimationFrame(()=>setTimeout(()=>hp.classList.add('open'),120));
-  // entradas por seção, em sequência
-  const els=[...document.querySelectorAll('.rv')];
-  if(!('IntersectionObserver' in window) || reduz){ els.forEach(e=>e.classList.add('in')); }
-  else{
-    const io=new IntersectionObserver(es=>{
-      es.forEach(e=>{ if(!e.isIntersecting) return;
-        const sib=[...e.target.parentElement.querySelectorAll(':scope > .rv')];
-        const k=Math.max(0,sib.indexOf(e.target));
-        e.target.style.transitionDelay=(k*75)+'ms';
-        e.target.classList.add('in'); io.unobserve(e.target); });
-    },{rootMargin:'0px 0px -8% 0px'});
-    els.forEach(e=>io.observe(e));
-  }
-  // o recibo
-  const f=n=>'R$ '+n.toLocaleString('pt-BR');
-  const box=[...document.querySelectorAll('#opts input')], sim=document.getElementById('sim'), v=document.getElementById('vendas');
-  const rows=document.getElementById('rows'), tot=document.getElementById('total'), mes=document.getElementById('mes'), quero=document.getElementById('quero');
-  const nomes={site:'Site e-commerce e Google Meu Negócio',ads:'Tráfego no Google Ads',mkt:'Implantação do marketplace'};
-  function conta(){
-    const on=box.filter(b=>b.checked).map(b=>b.value);
-    let t=0, h='';
-    if(on.includes('site')){t+=1800;h+='<div><span>'+nomes.site+'</span><span>R$ 1.800</span></div>';}
-    if(on.includes('ads')){h+='<div><span>'+nomes.ads+'</span><span>a combinar</span></div>';}
-    if(on.includes('mkt')){t+=5000;h+='<div><span>'+nomes.mkt+'</span><span>R$ 5.000</span></div>';}
-    rows.innerHTML=h||'<div class="vazio"><span>Marque uma frente ao lado</span><span></span></div>';
-    tot.textContent=f(t);
-    sim.hidden=!on.includes('mkt');
-    const vv=+v.value; document.getElementById('vout').textContent=f(vv);
-    let m='';
-    if(on.includes('mkt')) m+='<span>Por mês, 5% de '+f(vv)+'</span><b>'+f(Math.round(vv*0.05))+'</b>';
-    else if(on.includes('ads')) m+='<span>Por mês, Google Ads</span><b>a combinar</b>';
-    mes.innerHTML=m;
-    const txt='Olá! Vi a proposta da Resgalla e quero conversar sobre: '+(on.map(x=>nomes[x]).join(', ')||'as propostas')+'.';
-    quero.href='https://wa.me/5537984143588?text='+encodeURIComponent(txt);
-  }
-  box.forEach(b=>b.addEventListener('change',conta)); v.addEventListener('input',conta); conta();
+  const S=[...document.querySelectorAll('.slide')]; let i=0;
+  function fit(){ const k=Math.min(innerWidth/1280,(innerHeight-56)/720); S.forEach(s=>s.style.transform='translate(-50%,calc(-50% - 22px)) scale('+k+')'); }
+  function go(n){ i=Math.max(0,Math.min(S.length-1,n)); S.forEach((s,j)=>s.classList.toggle('on',j===i));
+    document.getElementById('num').textContent=(i+1)+' / '+S.length; document.getElementById('prog').style.width=((i+1)/S.length*100)+'%';
+    try{history.replaceState(null,'','#'+(i+1))}catch(e){} }
+  document.getElementById('ant').onclick=()=>go(i-1); document.getElementById('prox').onclick=()=>go(i+1);
+  addEventListener('keydown',e=>{ if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(i+1)} if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();go(i-1)} });
+  let x0=null; addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
+  addEventListener('touchend',e=>{ if(x0===null)return; const d=e.changedTouches[0].clientX-x0; if(Math.abs(d)>50) go(i+(d<0?1:-1)); x0=null; });
+  addEventListener('hashchange',()=>{const n=parseInt(location.hash.slice(1));if(n&&n-1!==i)go(n-1)}); addEventListener('resize',fit); fit(); go((parseInt(location.hash.slice(1))||1)-1);
 })();
 </script>
 </body>
